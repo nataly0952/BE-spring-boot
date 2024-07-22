@@ -1,0 +1,47 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-2" author="">
+        <insert tableName="publication">
+            <column name="id" valueNumeric="1"/>
+            <column name="title" value="Java 8 in Action"/>
+            <column name="author" value="Raoul-Gabriel Urma"/>
+            <column name="date" valueDate="2014-08-28"/>
+            <column name="category" value="Java"/>
+            <column name="about" value="Java 8 in Action is a clearly written guide to the new features of Java 8."/>
+            <column name="link" value="https://www.manning.com/books/java-8-in-action"/>
+        </insert>
+
+        <insert tableName="publication">
+            <column name="id" valueNumeric="2"/>
+            <column name="title" value="Spring in Action"/>
+            <column name="author" value="Craig Walls"/>
+            <column name="date" valueDate="2011-08-28"/>
+            <column name="category" value="Spring"/>
+            <column name="about" value="Spring in Action, Fourth Edition is a hands-on guide to the Spring Framework."/>
+            <column name="link" value="https://www.manning.com/books/spring-in-action-fourth-edition"/>
+        </insert>
+
+        <insert tableName="publication">
+            <column name="id" valueNumeric="3"/>
+            <column name="title" value="Spring Boot in Action"/>
+            <column name="author" value="Craig Walls"/>
+            <column name="date" valueDate="2016-08-28"/>
+            <column name="category" value="Spring"/>
+            <column name="about" value="Spring Boot in Action is a developer-focused guide to writing applications using Spring Boot."/>
+            <column name="link" value="https://www.manning.com/books/spring-boot-in-action"/>
+        </insert>
+
+        <insert tableName="publication">
+            <column name="id" valueNumeric="4"/>
+            <column name="title" value="Spring Microservices in Action"/>
+            <column name="author" value="John Carnell"/>
+            <column name="date" valueDate="2017-08-28"/>
+            <column name="category" value="Spring"/>
+            <column name="about" value="Spring Microservices in Action teaches you how to build microservice-based applications using Java and the Spring platform."/>
+            <column name="link" value="https://www.manning.com/books/spring-microservices-in-action"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
