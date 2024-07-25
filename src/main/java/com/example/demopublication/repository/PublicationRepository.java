@@ -13,5 +13,6 @@ public interface PublicationRepository extends JpaRepository<PublicationEntity, 
     List<PublicationEntity> findByAuthor(String author);
     List<PublicationEntity> findByDate(LocalDate date);
     List<PublicationEntity> findByCategory(String category);
+    List<PublicationEntity> findByAbout(String about);
     List<PublicationEntity> findByTitleContainingIgnoreCaseOrAboutContainingIgnoreCaseOrCategoryContainingIgnoreCase(String title, String about, String category);
 }

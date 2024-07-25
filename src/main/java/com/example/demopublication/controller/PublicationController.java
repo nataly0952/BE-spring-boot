@@ -54,6 +54,13 @@ public class PublicationController {
     public List<PublicationEntity> getPublicationsByDate(
             @PathVariable LocalDate date) {
         return publicationService.getPublicationsByDate(date);
+
+    }
+    @GetMapping("/about/{about}")
+    public List<PublicationEntity> getPublicationsByAbout(
+            @PathVariable LocalDate about) {
+        return publicationService.getPublicationsByDate(about);
+
     }
     @GetMapping("/search")
     public List<PublicationEntity> searchPublications(@RequestParam String query) {
