@@ -8,14 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api/publications")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PublicationController {
+    private static final Logger logger = Logger.getLogger(PublicationController.class.getName());
     private final PublicationService publicationService;
 
     @Autowired
@@ -25,6 +28,7 @@ public class PublicationController {
 
     @GetMapping
     public List<PublicationEntity> getAllPublications() {
+        logger.info("Received request to get all publications");
         return publicationService.getAllPublications();
     }
 
@@ -51,4 +55,10 @@ public class PublicationController {
             @PathVariable LocalDate date) {
         return publicationService.getPublicationsByDate(date);
     }
+    @GetMapping("/search")
+    public List<PublicationEntity> searchPublications(@RequestParam String query) {
+        logger.info("Received search request with query: " + query);
+        return publicationService.searchPublications(query);
+    }
+
 }

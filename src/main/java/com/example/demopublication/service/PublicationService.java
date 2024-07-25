@@ -36,4 +36,7 @@ public class PublicationService {
     public List<PublicationEntity> getPublicationsByCategory(String category) {
         return publicationRepository.findByCategory(category);
     }
+    public List<PublicationEntity> searchPublications(String query) {
+        return publicationRepository.findByTitleContainingIgnoreCaseOrAboutContainingIgnoreCaseOrCategoryContainingIgnoreCase(query, query, query);
+    }
 }
